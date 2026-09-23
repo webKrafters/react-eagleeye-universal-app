@@ -16,8 +16,9 @@
     "@webkrafters/data-distillery": "^0.1.1",
     "@webkrafters/get-property": "^2.0.0",
     "@webkrafters/path-dotize": "0.0.2",
-    "@webkrafters/react-eagleeye": "^1.0.4",
+    "@webkrafters/react-eagleeye": "^1.1.0-alpha.7",
     "@webkrafters/timed-map": "^2.0.0",
+    "express": "^5.2.1",
     "lodash.clonedeep": "^4.5.0",
     "lodash.clonedeepwith": "^4.5.0",
     "lodash.isboolean": "^3.0.3",
@@ -32,17 +33,27 @@
     "react-xarrows": "2.0.2"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/lodash.isempty": "^4.4.9",
     "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "cross-env": "^10.1.0",
+    "react-router": "^7.18.3",
+    "tsx": "^4.23.13",
     "typescript": "^4.9.4",
-    "vite": "^7.3.0"
+    "vite": "^8.3.0"
   },
-  "name": "react-eagleeye-app",
+  "name": "react-eagleeye-universal-app",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "clean-build": "rm -rf dist && npm run build",
-    "preview": "vite preview"
+    "build:client": "vite build",
+    "build:server": "cross-env BUILD_TARGET=server vite build",
+    "build": "npm run build:client && npm run build:server",
+    "dev": "rm -rf dist && npm run build:client -- --mode development && npm run build:server -- --mode development && npm run run",
+    "run": "tsx --env-file=.env src/index.ts",
+    "start": "node dist/server/index.js"
   },
-  "version": "1.0.1"
+  "type": "module",
+  "version": "1.0.0"
 }

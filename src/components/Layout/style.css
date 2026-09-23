@@ -1,0 +1,116 @@
+#root {
+    display: flex;
+    justify-content: center;
+} 
+.App {
+	--aquamarine: #1890ee;
+	--brand-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--grey: #333;
+	--navy: #0d4aa6;
+	display: flex;
+	flex-direction: column;
+	min-height: 98.7vh;
+}
+.App a { color: var(--aquamarine) }
+.App a:hover { color: var(--navy) }
+.App > div { flex: 1 1 auto }
+.App > div > h1:first-of-type {
+	align-items: flex-start;
+	color:  var(--grey);
+	display: flex;
+	font-family: var(--brand-font-family);
+	font-size: 1.725rem;
+	margin-top: 0;
+}
+.App > div > h1:first-of-type > img {
+	height: 80px;
+	margin-right: 16px;
+	width: 80px;
+}
+.App > div > h1:first-of-type > p { margin: 0 }
+.App > div > h1:first-of-type > p > * {
+	display: block;
+	line-height: .9
+}
+.App > div > h1:first-of-type > p > strong {
+	color: #f90;
+}
+.App > div > h1:first-of-type > p > strong > span {
+	font-variant: small-caps;
+}
+.App > div > h1:first-of-type > p > a {
+	font-size: 1.4rem;
+	font-style: italic;
+	font-variant: all-small-caps
+}
+.App > div > nav {
+	border-bottom: 1px solid var(--grey);
+	margin-bottom: 2rem;
+	float: left;
+	font-size: 1.5rem;
+	font-weight: 700;
+	position: relative;
+}
+.App > div > nav::after {
+    color: #d44;
+	content: 'Open browser console > Fill in the textboxes below > Monitor resulting rendering activities.';
+    font-family:  var(--brand-font-family);
+    font-size: 1rem;
+    left: 0;
+    position: absolute;
+    top: 100%;
+}
+.App > div > nav > * {
+	font-family:  var(--brand-font-family);
+	text-decoration: none;
+}
+.App > div > nav > :not( a ) {
+	color:  var(--grey);
+	cursor: default;
+	font-family:  var(--brand-font-family);
+	text-decoration: none;
+}
+.App > div > nav > label {
+	white-space: nowrap;
+}
+.App > div > nav > :not(:last-child) {
+	margin-right: 1.5rem;
+}
+.App > div > nav > a.current,
+.App > div > nav > a.current:hover {
+	color: #707;
+	pointer-events: none;
+}
+.App > div > main { clear: both }
+.App > div > main > nav {
+	align-items: center;
+    border: 1px dashed #1890EE55;
+    display: flex;
+    height: 2.5rem;
+    justify-content: space-evenly;
+    margin: -0.5rem 0 1rem;
+}
+.App > div > main > nav > a {
+    font-family: fantasy;
+    font-weight: 500;
+    text-decoration: none;
+}
+.App > div > main button.reset{
+	border: 1px solid var(--aquamarine);
+    background-color: var(--aquamarine);
+    border-radius: 4px;
+    color: #fff;
+	cursor: pointer;
+    font-size: .85rem;
+    font-weight: 700;
+    padding: 7px 20px;
+}
+.App > div > main button.reset:hover{
+    background-color: var(--navy);
+	border: 1px solid var(--navy);
+}
+.App > footer {
+	font-family: var(--brand-font-family);
+	flex: 0 0 10px;
+	text-align: right;
+}

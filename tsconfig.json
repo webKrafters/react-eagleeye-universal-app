@@ -11,18 +11,28 @@
     // This compiler run should
     // only output d.ts files
     "emitDeclarationOnly": false,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
     // Types should go into this directory.
     // Removing this would place the .d.ts files
     // next to the .js files
+    "lib": [ "DOM", "DOM.Iterable", "ES2021" ],
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "outDir": "types",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "target": "esnext",
   },
   // Change the following to match your project
   "exclude": [
 	  "src/**/test",
 		"src/**/test-apps",
 		"src/**/test-artifacts",
-		"src/**/*.test.js"
+		"src/**/*.test.ts",
+		"src/**/*.test.tsx"
   ],
-  "include": [ "src/**/*" ]
+  "include": [
+    "lib/**/*",
+    "src/**/*"
+  ]
 }
