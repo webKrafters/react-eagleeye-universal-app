@@ -13,7 +13,7 @@ import {
 } from 'react-router';
 
 import {
-	AddressUniversal as Address,
+	AddressUniverse as Address,
 	Changes
 } from '@webkrafters/react-eagleeye';
 

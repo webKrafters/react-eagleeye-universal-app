@@ -16,7 +16,7 @@
     "@webkrafters/data-distillery": "^0.1.1",
     "@webkrafters/get-property": "^2.0.0",
     "@webkrafters/path-dotize": "0.0.2",
-    "@webkrafters/react-eagleeye": "^1.1.0-alpha.7",
+    "@webkrafters/react-eagleeye": "^1.1.1",
     "@webkrafters/timed-map": "^2.0.0",
     "express": "^5.2.1",
     "lodash.clonedeep": "^4.5.0",
@@ -49,10 +49,10 @@
   "scripts": {
     "build:client": "vite build",
     "build:server": "cross-env BUILD_TARGET=server vite build",
-    "build": "npm run build:client && npm run build:server",
-    "dev": "rm -rf dist && npm run build:client -- --mode development && npm run build:server -- --mode development && npm run run",
+    "dev": "npm un -S @webkrafters/react-eagleeye && npm i -S @webkrafters/react-eagleeye && npm run start -- --force",
+    "qdev": "npm un -S @webkrafters/react-eagleeye && npm i -S ../react-eagleeye.js/webkrafters-react-eagleeye-1.1.0-alpha.20.tgz && npm run start -- --force",
     "run": "tsx --env-file=.env src/index.ts",
-    "start": "node dist/server/index.js"
+    "start": "rm -rf dist && npm run build:client -- --mode development && npm run build:server -- --mode development && npm run run"
   },
   "type": "module",
   "version": "1.0.0"

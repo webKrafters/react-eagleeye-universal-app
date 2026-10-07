@@ -31,6 +31,8 @@ export async function render( request : express.Request ) {
 				value: getDemoInitState()
 			}
 		});
+		// @ts-expect-error
+		request.signal = new AbortController().signal;
 		const context = await handler.query(
 			request as unknown as Request,
 			{ requestContext: { appStoreId } }

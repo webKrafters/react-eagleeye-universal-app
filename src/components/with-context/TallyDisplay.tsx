@@ -27,13 +27,6 @@ const TallyDisplay : FC<{
 
 	useEffect(() => console.log( 'TallyDisplay component rendered.....' ));
 
-	useEffect(() => {
-		console.info( '<<<'.repeat( 4 ) + ' HELLO ' + '>>>'.repeat( 4 ) );
-		return () => {
-			console.info( '<<<'.repeat( 4 ) + ' BYE BYE ' + '>>>'.repeat( 4 ) );
-		}
-	}, []);
-
 	return (
 		<div style={{ margin: '20px 0 10px' }}>
 			<div style={{ float: 'left', fontSize: '1.75rem' }}>
