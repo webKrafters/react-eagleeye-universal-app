@@ -121,7 +121,7 @@ export function Layout() {
 				</main>
 			</div>
 			<footer>
-				&copy;2022{ year > 2022 ? `-${ year }` : '' } <a href="https://webkrafters.tech" rel="no-follow">webKrafters</a>. All rights reserved.
+				&copy;2026{ year > 2026 ? `-${ year }` : '' } <a href="https://webkrafters.tech" rel="no-follow">webKrafters</a>. All rights reserved.
 			</footer>
 		</div>
 	);
