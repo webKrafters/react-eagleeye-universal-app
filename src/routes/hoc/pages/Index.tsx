@@ -4,7 +4,7 @@ import {
 	useMemo
 } from 'react';
 
-import { AddressUniversal as Address, Changes } from '@webkrafters/react-eagleeye';
+import { AddressUniverse as Address, Changes } from '@webkrafters/react-eagleeye';
 
 import { DemoContext, DemoState } from '../../../context';
 
